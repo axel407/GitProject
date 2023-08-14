@@ -164,5 +164,33 @@ namespace AcademyGroup
                 Console.WriteLine(ex.Message);
             }
         }
+        public void Load()
+        {
+            try
+            {
+                FileStream file1 = new FileStream("group.dat", FileMode.Open, FileAccess.Read);
+                BinaryReader reader = new BinaryReader(file1);
+                int count = reader.ReadInt32();
+                for (int i = 0; i < count; i++)
+                {
+                    Student.Student student1 = new Student.Student();
+                    student1.Name = reader.ReadString();
+                    student1.Surname = reader.ReadString();
+                    student1.Phone = reader.ReadString();
+                    student1.Age = reader.ReadInt32();
+                    student1.Average = reader.ReadDouble();
+                    student1.Number_Of_Group = reader.ReadInt32();
+
+                    group.Add(student1);
+                }
+                reader.Close();
+                file1.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
     }
 }
