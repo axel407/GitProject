@@ -64,6 +64,13 @@ namespace Student
             Number_Of_Group = _number_of_group;
         }
 
+        //метод печати информации на экран
+        new public void Print()
+        {
+            base.Print();
+            Console.WriteLine("Average: {0}\nNumber Of Group: {1}", Average, Number_Of_Group);
+        }
+
         //Реализация CompareTo, сравнивается по фамилии
         public int CompareTo(object? obj)
         {
