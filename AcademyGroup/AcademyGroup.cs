@@ -121,7 +121,24 @@ namespace AcademyGroup
             }
 
         }
-
+        public void Print()
+        {
+            int i = 0;
+            try
+            {
+                foreach (object o in group)
+                {
+                    Student.Student temp = new Student.Student();
+                    temp = group[i++] as Student.Student;
+                    Console.WriteLine("{0}. {1} {2}", i++, temp.Name, temp.Surname);
+                    i--;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
         public void Save()
         {
             try
