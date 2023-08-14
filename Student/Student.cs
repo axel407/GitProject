@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Collections;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace Student
@@ -78,6 +79,48 @@ namespace Student
                 return this.Surname.CompareTo((obj as Student).Surname);
 
             throw new NotImplementedException();
+        }
+
+        public class SortByName : IComparer
+        {
+            int IComparer.Compare(object x, object y)
+            {
+                if (x is Student && y is Student)
+                    return (x as Student).Name.CompareTo((y as Student).Name);
+
+                throw new NotImplementedException();
+            }
+        }
+        public class SortByAge : IComparer
+        {
+            int IComparer.Compare(object x, object y)
+            {
+                if (x is Student && y is Student)
+                    return (x as Student).Age.CompareTo((y as Student).Age);
+
+                throw new NotImplementedException();
+            }
+        }
+        public class SortByAverage : IComparer
+        {
+            int IComparer.Compare(object x, object y)
+            {
+                if (x is Student && y is Student)
+                    return (x as Student).Average.CompareTo((y as Student).Average);
+
+                throw new NotImplementedException();
+            }
+        }
+        public class SortByGroup : IComparer
+        {
+            int IComparer.Compare(object x, object y)
+            {
+                if (x is Student && y is Student)
+                    return (x as Student).Number_Of_Group.CompareTo((y as Student).Number_Of_Group);
+
+                throw new NotImplementedException();
+            }
+
         }
     }
 }
