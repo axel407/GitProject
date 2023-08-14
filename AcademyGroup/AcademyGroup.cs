@@ -215,5 +215,12 @@ namespace AcademyGroup
                 Console.WriteLine(ex.Message);
             }
         }
+        public object Clone()
+        {
+            AcademyGroup new_list = new AcademyGroup();
+            for (int i = 0; i < group.Count; i++)
+                new_list.group.Add(this.group[i]);
+            return new_list;
+        }
     }
 }
