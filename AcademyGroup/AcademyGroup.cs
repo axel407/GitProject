@@ -121,5 +121,31 @@ namespace AcademyGroup
             }
 
         }
+
+        public void Save()
+        {
+            try
+            {
+                FileStream file = new FileStream("group.dat", FileMode.Create, FileAccess.Write);
+                BinaryWriter writer = new BinaryWriter(file);
+                writer.Write(group.Count);
+                for (int i = 0; i < group.Count; i++)
+                {
+                    Student.Student temp = group[i] as Student.Student;
+                    writer.Write(temp.Name);
+                    writer.Write(temp.Surname);
+                    writer.Write(temp.Phone);
+                    writer.Write(temp.Age);
+                    writer.Write(temp.Average);
+                    writer.Write(temp.Number_Of_Group);
+                }
+                writer.Close();
+                file.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
