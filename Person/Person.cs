@@ -81,5 +81,24 @@ namespace Person
                 }
             }
         }
+
+        //конструкторы класса Person
+        public Person() : this("Unknown", "Unknown", 2, "+000 000 000")
+        {
+
+        }
+        public Person(string _name, string _surname, int _age, string _phone)
+        {
+            Name = _name;
+            Surname = _surname;
+            Age = _age;
+            Phone = _phone;
+        }
+
+        //метод печати информации на экран
+        public void Print()
+        {
+            Console.WriteLine("Name: {0}\nSurname: {1}\nAge: {2}\nPhone: {3}", Name, Surname, Age, Phone);
+        }
     }
 }
