@@ -24,5 +24,26 @@ namespace AcademyGroup
         {
             group.Add(new_student);
         }
+        public void Remove(string surname)
+        {
+
+            for (int i = 0; i < group.Count; i++)
+            {
+                try
+                {
+                    Student.Student temp = (Student.Student)group[i];
+                    if (temp.Surname == surname)
+                    {
+                        group.RemoveAt(i);
+                        break;
+                    }
+                }
+                catch
+                {
+                    break;
+                    throw;
+                }
+            }
+        }
     }
 }
