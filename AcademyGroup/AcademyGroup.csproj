@@ -7,12 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Person">
-      <HintPath>..\Student\bin\Debug\net7.0\Person.dll</HintPath>
-    </Reference>
-    <Reference Include="Student">
-      <HintPath>..\Student\bin\Debug\net7.0\Student.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Person\Person.csproj" />
+    <ProjectReference Include="..\Student\Student.csproj" />
   </ItemGroup>
 
 </Project>
