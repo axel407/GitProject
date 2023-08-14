@@ -19,5 +19,10 @@ namespace AcademyGroup
         {
             group.Clear();
         }
+
+        public void Add(Student.Student new_student)
+        {
+            group.Add(new_student);
+        }
     }
 }
