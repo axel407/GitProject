@@ -164,5 +164,28 @@ namespace AcademyGroup
                 Console.WriteLine(ex.Message);
             }
         }
+
+        public void Sort(int choice)
+        {
+            try
+            {
+                if (choice == 1)
+                    group.Sort(new Student.Student.SortByName());
+                else if (choice == 2)
+                    group.Sort();
+                else if (choice == 3)
+                    group.Sort(new Student.Student.SortByAge());
+                else if (choice == 4)
+                    group.Sort(new Student.Student.SortByAverage());
+                else if (choice == 5)
+                    group.Sort(new Student.Student.SortByGroup());
+                else
+                    throw new Exception("Wrong choice");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
